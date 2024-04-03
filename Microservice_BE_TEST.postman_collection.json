@@ -1,0 +1,1508 @@
+{
+	"info": {
+		"_postman_id": "3127a02a-c468-458b-a129-3688de201fc7",
+		"name": "Microservice BE TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26300401",
+		"_collection_link": "https://www.postman.com/bold-flare-664323/workspace/test/collection/26300401-3127a02a-c468-458b-a129-3688de201fc7?action=share&source=collection_link&creator=26300401"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "testUser@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testUser",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				},
+				"description": "Get an access token"
+			},
+			"response": [
+				{
+					"name": "Login - Successful login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "testUser1@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUser1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "185",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:26:37 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"b9-O+ZOs9iYRKJ5Kqaj9ybM/iNkA1A\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4\""
+				},
+				{
+					"name": "Login - Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "not_existing_email@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUser",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "52",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:56:52 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"34-hgKLbT7wFxmRt5DE8Epg7gY9xcQ\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":401,\"message\":\"Invalid email or password\"}"
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "testUser5@email.com",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "testUser5",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testUser45",
+							"type": "text"
+						},
+						{
+							"key": "identityNumber",
+							"value": "1234567891",
+							"type": "text"
+						},
+						{
+							"key": "accountNumber",
+							"value": "1234567891",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "Create a new user"
+			},
+			"response": [
+				{
+					"name": "Create User - Successfully added user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "testUser1@email.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "testUser1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUser1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "227",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:12:32 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"e3-dFL0GahHU5SF591BG8cNLmtKQxs\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"role\":\"test_user\",\"_id\":\"60a50ec07ead1161ec3c4554\",\"username\":\"testUser1\",\"password\":\"$2a$10$5kpb9CMKYXBzfD4/v/MUVe4GZzUqE80271KqXdKcuPu.yUrKJbrYq\",\"email\":\"testuser1@email.com\",\"createdAt\":\"2021-05-19T13:12:32.805Z\",\"__v\":0}"
+				},
+				{
+					"name": "Create User - Error creating user (case 1)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "testUser2@email.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "testUser2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUser2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "71",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 15:08:30 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"47-kZ0idO6ouPNHR3dadnO8z5EaypA\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":404,\"message\":\"User with username: testUser2 already exists\"}"
+				},
+				{
+					"name": "Create User - Error creating user (case 2)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "testUser2@email.com",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "testUser2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "testUser2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "78",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 15:09:58 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"4e-nadBCDk7kfFcxm2HtJ+TnvMeBGY\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":404,\"message\":\"username, password and email fields cannot be empty\"}"
+				}
+			]
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "testUser1",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "testUser1@email.com",
+							"disabled": true
+						},
+						{
+							"key": "_id",
+							"value": "60a50ec07ead1161ec3c4554",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get a list of users (with or without params)"
+			},
+			"response": [
+				{
+					"name": "List Users - Fetch all users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "515",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:36:48 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"203-cVMgSjwhD4fW9utAC9gaceoZogU\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"users\":[{\"role\":\"test_user\",\"_id\":\"60a50ec07ead1161ec3c4554\",\"username\":\"testUser1\",\"password\":\"$2a$10$5kpb9CMKYXBzfD4/v/MUVe4GZzUqE80271KqXdKcuPu.yUrKJbrYq\",\"email\":\"testuser1@email.com\",\"createdAt\":\"2021-05-19T13:12:32.805Z\",\"__v\":0},{\"role\":\"test_user\",\"_id\":\"60a512947ead1161ec3c4555\",\"username\":\"testUser2\",\"password\":\"$2a$10$Z8inAUlohlUk95fIQrZ/7euKwDpuLCDUGFqGkMFKsL4cuTiM7tmpm\",\"email\":\"testuser2@email.com\",\"createdAt\":\"2021-05-19T13:28:52.435Z\",\"__v\":0}],\"totalItems\":2,\"totalPages\":1,\"itemsPerPage\":10}"
+				},
+				{
+					"name": "List Users - Fetch user by property (username)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users?username=testUser1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "testUser1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "287",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:46:23 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"11f-l7bBiBrQBkL7WtSl8amq5X56HJY\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"users\":[{\"role\":\"test_user\",\"_id\":\"60a50ec07ead1161ec3c4554\",\"username\":\"testUser1\",\"password\":\"$2a$10$5kpb9CMKYXBzfD4/v/MUVe4GZzUqE80271KqXdKcuPu.yUrKJbrYq\",\"email\":\"testuser1@email.com\",\"createdAt\":\"2021-05-19T13:12:32.805Z\",\"__v\":0}],\"totalItems\":1,\"totalPages\":1,\"itemsPerPage\":10}"
+				}
+			]
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "testUser1",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "testUser1@email.com",
+							"disabled": true
+						},
+						{
+							"key": "_id",
+							"value": "60a50ec07ead1161ec3c4554",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get a list of users (with or without params)"
+			},
+			"response": [
+				{
+					"name": "Get User - By Identity Number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users/identityNumber/123456789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"identityNumber",
+								"123456789"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "515",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:36:48 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"203-cVMgSjwhD4fW9utAC9gaceoZogU\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"role\": \"test_user\",\n            \"_id\": \"60a50ec07ead1161ec3c4554\",\n            \"username\": \"testUser1\",\n            \"password\": \"$2a$10$5kpb9CMKYXBzfD4/v/MUVe4GZzUqE80271KqXdKcuPu.yUrKJbrYq\",\n            \"email\": \"testuser1@email.com\",\n            \"createdAt\": \"2021-05-19T13:12:32.805Z\",\n            \"__v\": 0\n        },\n        {\n            \"role\": \"test_user\",\n            \"_id\": \"60a512947ead1161ec3c4555\",\n            \"username\": \"testUser2\",\n            \"password\": \"$2a$10$Z8inAUlohlUk95fIQrZ/7euKwDpuLCDUGFqGkMFKsL4cuTiM7tmpm\",\n            \"email\": \"testuser2@email.com\",\n            \"createdAt\": \"2021-05-19T13:28:52.435Z\",\n            \"__v\": 0\n        }\n    ],\n    \"totalItems\": 2,\n    \"totalPages\": 1,\n    \"itemsPerPage\": 10\n}"
+				},
+				{
+					"name": "Get User - By Account Number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users/accountNumber/12344",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"accountNumber",
+								"12344"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "515",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 13:36:48 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"203-cVMgSjwhD4fW9utAC9gaceoZogU\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Get  Users by id - Successfully get post by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhNTBlYzA3ZWFkMTE2MWVjM2M0NTU0In0sImlhdCI6MTYyMTQzMDc5NywiZXhwIjoxNjIxNzkwNzk3fQ.wzzesl3ahfUfxz1gFnvF3SL8buLOt8rY6TDmm1F2Tl4"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users/60a5236c7ead1161ec3c4556",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"60a5236c7ead1161ec3c4556"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "192",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 16:41:37 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"c0-oHo7QM5tXUVvJvmA08476gNA0/Y\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjYwY2RkZTY5NjA2MTg5Yjg1N2JhOWIyIn0sImlhdCI6MTcxMjEyMDQ5MSwiZXhwIjoxNzEyNDgwNDkxfQ.xR_cZvhRgJRNzMWr-j3KzYWUJ-5dSKdUmQESJ2YlmBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@email.com",
+							"type": "text"
+						},
+						{
+							"key": "accountNumber",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "identityNumber",
+							"value": "123454655",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/users/660cdde69606189b857ba9b2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"660cdde69606189b857ba9b2"
+					]
+				},
+				"description": "Update user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjYwZGQyYWVjMGJkY2EyODFjMGNmOWU3In0sImlhdCI6MTcxMjE4MjAyMSwiZXhwIjoxNzEyNTQyMDIxfQ.YnDe-BqET_kE1Fx7NhBen0l_dn2oFlVqOqZM9T5LR9c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:1234/api/v1/users/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Delete user by id"
+			},
+			"response": [
+				{
+					"name": "Delete user id - Successfully deleted user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:1234/api/v1/users/60a5236c7ead1161ec3c4556",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"60a5236c7ead1161ec3c4556"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "access-control-allow-headers",
+							"value": "X-Requested-With, Content-type, Authorization, Cache-control, Pragma",
+							"name": "access-control-allow-headers",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+							"name": "access-control-allow-methods",
+							"description": ""
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"name": "access-control-allow-origin",
+							"description": ""
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive",
+							"name": "connection",
+							"description": ""
+						},
+						{
+							"key": "content-length",
+							"value": "27",
+							"name": "content-length",
+							"description": ""
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8",
+							"name": "content-type",
+							"description": ""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 19 May 2021 17:48:59 GMT",
+							"name": "date",
+							"description": ""
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1b-LFVcyDQ1zBOCfhbMycyMuMdkvdE\"",
+							"name": "etag",
+							"description": ""
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5",
+							"name": "keep-alive",
+							"description": ""
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding",
+							"name": "vary",
+							"description": ""
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express",
+							"name": "x-powered-by",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "\"user sucessfully deleted!\""
+				}
+			]
+		}
+	]
+}
